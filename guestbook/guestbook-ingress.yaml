@@ -1,0 +1,17 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: guestbook-route
+  namespace: default
+  labels:
+    app.kubernetes.io/instance: argotest
+spec:
+  to:
+    kind: Service
+    name: guestbook-ui
+  tls: null
+  host: guestbook.apps.grid1.sandbox286.opentlc.com
+  port:
+    targetPort: 80
+  alternateBackends: []
+
